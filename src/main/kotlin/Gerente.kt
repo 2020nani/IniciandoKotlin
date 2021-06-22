@@ -2,7 +2,8 @@ class Gerente(
     nome: String,
     cpf: String,
     tipoFuncionario: TipoFuncionario,
-    val senha: Int
+    val senha: Int,
+
 ) : Funcionario (nome = nome, cpf = cpf, tipo=tipoFuncionario){
 
     fun autenticacao(password: Int): Boolean {
