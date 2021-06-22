@@ -9,10 +9,12 @@ class ContaCorrente(
 
         ) {
 
-
     override fun saqueConta(saque: Double) {
-        val saqueComTaxa = saque + (saque * 0.03)
-        super.saqueConta(saqueComTaxa)
+        when {
+            this.saldo == 0.0 -> "Nao ha saldo em conta"
+            this.saldo >= saque + (saque * 0.01) -> this.saldo -= saque + (saque * 0.01)
+            else -> println("Saque nao pode ser maior que o saldo em conta")
+        }
 
     }
 }

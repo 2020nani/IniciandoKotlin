@@ -1,5 +1,5 @@
 fun testaFuncionario() {
-    val funcionario = Funcionario(nome = "Hernani", cpf = "333.333.333.33", tipo = TipoFuncionario.subgerente)
+    val funcionario = Analista(nome = "Hernani", cpf = "333.333.333.33", tipoFuncionario = TipoFuncionario.comum)
     var pagamento = 2500.0
     funcionario.pagamentoSalario(
         pagamento = pagamento,
@@ -12,7 +12,7 @@ fun testaFuncionario() {
         pagamento = pagamento,
     )
 
-    if (gerente.autenticacao(password = 123456)) {
+    if (Sistema().autenticacao(admin = gerente,password = 123456)) {
         println("Autenticado com sucesso")
     } else {
         println("Senha invalida")

@@ -1,10 +1,10 @@
-open class Conta(
+abstract class Conta(
     val titular: String,
     val numeroConta: Int
 ) {
 
     var saldo = 0.0
-        private set
+        protected set
 
     fun depositoConta(deposito: Double) {
         println(this.saldo)
@@ -12,16 +12,7 @@ open class Conta(
         println(this.saldo)
     }
 
-    open fun saqueConta(saque: Double) {
-        println(this.saldo)
-        when {
-            this.saldo == 0.0 -> "Nao ha saldo em conta"
-            this.saldo >= saque -> this.saldo -= saque
-            else -> println("Saque nao pode ser maior que o saldo em conta")
-        }
-
-        println(this.saldo)
-    }
+    abstract fun saqueConta(saque: Double)
 
     fun transferenciaContaParaConta(contaTransferencia: Conta, valor: Double): Boolean {
         when {

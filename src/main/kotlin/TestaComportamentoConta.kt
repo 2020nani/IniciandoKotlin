@@ -1,6 +1,6 @@
 fun testaComportamentoConta() {
-    val conta1 = Conta(titular = "hernani", numeroConta = 1)
-    val conta2 = Conta(titular = "junior", numeroConta = 2)
+    val conta1 = ContaCorrente(titular = "hernani", numeroConta = 1)
+    val conta2 = ContaCorrente(titular = "junior", numeroConta = 2)
 
     conta1.depositoConta(1000.0)
     conta2.depositoConta(2000.0)

@@ -1,11 +1,11 @@
 
-open class Funcionario(
+abstract class Funcionario(
     val nome: String,
     val cpf: String,
     var tipo: TipoFuncionario
 ) {
     var salario = 0.0
-        private set
+        protected set
 
     fun pagamentoSalario(pagamento: Double) {
         this.salario += pagamento + this.tipo.bonificacao(pagamento)

@@ -6,13 +6,13 @@ enum class TipoFuncionario {
         }
 
     },
-    subgerente {
+    gerente {
         override fun bonificacao(valor: Double): Double {
             return valor * 0.2
         }
 
     },
-    gerente {
+    diretor {
         override fun bonificacao(valor: Double): Double {
             return valor * 0.3
         }

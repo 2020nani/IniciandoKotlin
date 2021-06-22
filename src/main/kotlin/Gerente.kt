@@ -2,15 +2,12 @@ class Gerente(
     nome: String,
     cpf: String,
     tipoFuncionario: TipoFuncionario,
-    val senha: Int,
+    senha:Int
+) : FuncionarioAdmim (nome = nome, cpf = cpf, tipo=tipoFuncionario, senha = senha)
+  , Autenticacao{
 
-) : Funcionario (nome = nome, cpf = cpf, tipo=tipoFuncionario){
-
-    fun autenticacao(password: Int): Boolean {
-        if (this.senha == password) {
-            return true
-        }
-        return false
+    override fun autentica(senha: Int): Boolean {
+        return super<FuncionarioAdmim>.autentica(senha)
     }
 
     override fun toString(): String {
