@@ -1,7 +1,8 @@
-class Conta(
+open class Conta(
     val titular: String,
     val numeroConta: Int
 ) {
+
     var saldo = 0.0
         private set
 
@@ -11,7 +12,7 @@ class Conta(
         println(this.saldo)
     }
 
-    fun saqueConta(saque: Double) {
+    open fun saqueConta(saque: Double) {
         println(this.saldo)
         when {
             this.saldo == 0.0 -> "Nao ha saldo em conta"
@@ -24,9 +25,6 @@ class Conta(
 
     fun transferenciaContaParaConta(contaTransferencia: Conta, valor: Double): Boolean {
         when {
-            contaTransferencia.titular == this.titular -> {
-                println("Nao e permitido transferencia numa mesma conta");return false
-            }
             this.saldo < valor -> {
                 println("Nao ha saldo necessario para realizar a transferencia");return false
             }
